@@ -18,31 +18,37 @@ $(document).ready(function() {
 
 
         // Append dog info to table on page
-        $("#dogTable > tbody").append("<tr><td>" + firebaseLostFound + "</td><td>" + firebaseBreed + "</td><td>" + firebaseColor + "</td><td>" + firebaseLocation + "</td><td>" + firebaseMissingDate + "</td><td>" + firebaseMissingTime + "</td><td>" + firebaseContactEmail +  "</td></tr>");
+        $("#dogTable > tbody").append("<tr><td>" + firebaseBreed + "</td><td>" + firebaseColor + "</td><td>" + firebaseLocation + "</td><td>" + firebaseMissingDate + "</td><td>" + firebaseMissingTime + "</td><td>" + firebaseContactEmail +  "</td></tr>");
 
     });
 });
 
-function myFunction() {
-    // Declare variables 
-    var input, filter, table, tr, td, i;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("dogTable");
-    tr = table.getElementsByTagName("tr");
+    // highlight matching table content
+  
+    $("#userSearch").on("keyup", function () {
+        var value = $(this).val();
 
-    // Loop through all table rows, and hide those who don't match the search query
-    for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[1];
-        if (td) {
-            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
+        $("table tr").each(function (index) {
+            if (index != 0) {
+
+                $row = $(this);
+
+                var id = $row.find("td:first").text();
+
+                if (id.indexOf(value) != 0) {
+                    // $(this).css("background", "white");
+                    $(this).hide();
+
+                }
+                else {
+                    $(this).show();
+                    // $(this).addClass("highlight");
+
+                }
             }
-        }
-    }
-}
+        });
+    })
+
 
 var map, infoWindow;
 
@@ -81,17 +87,3 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
 }
-
-
-// markers.push(marker);
-
-// for (var i = 0; i < markers.length; i++) {
-//     markers[i].setMap(map);
-// }
-
-
-// markers.push(marker);
-
-// for (var i = 0; i < markers.length; i++) {
-//     markers[i].setMap(map);
-// }

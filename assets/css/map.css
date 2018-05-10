@@ -22,6 +22,16 @@ iframe {
     width: 100%;
 }
 
+#userSearch{
+    margin-left: 400px;
+    margin-top: 25px;
+}
+
+#dogSearch{
+    margin-left: 400px;
+    margin-top: 25px;
+}
+
 
 
 /* found page css */

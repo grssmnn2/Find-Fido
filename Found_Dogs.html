@@ -23,7 +23,8 @@
   <!--   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTQplToC7vrZZPdPirJm0clLpN3YbMW6U&callback=initMap" async defer></script> -->
   <!-- Bootstrap core JavaScript -->
   <script src="startbootstrap-full-width-pics-master/vendor/jquery/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
   <script src="startbootstrap-full-width-pics-master/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- Firebase -->
   <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
@@ -31,9 +32,9 @@
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
   <title id="logo">Find Fido</title>
   <style>
-  .pac-container {
-    z-index: 10000 !important;
-  }
+    .pac-container {
+      z-index: 10000 !important;
+    }
   </style>
 </head>
 
@@ -53,16 +54,24 @@
         </div>
       </div>
     </nav>
-    </div>
+  </div>
   <!-- Header - set the background image for the header in the line below -->
-      <div class="jumbotron col-xs-12 col-sm-12 col-md-12 col-lg-12" id="searchText">
-        <div id="content" class="jumboText">
-          <h1 class="text-center">Search Lost Dogs</h1>
-          <h1 class="text-center">✶ ✶ ✶ ✶</h1>
-          <button type="button" class="lost btn btn-info btn-lg vetButton" data-toggle="modal" data-target="#vetModal">Find a Vet</button>
-        </div>
-      </div>
+  <div class="jumbotron col-xs-12 col-sm-12 col-md-12 col-lg-12" id="searchText">
+    
+    <div>
+      <h2 class="panel-title" id="dogSearch">
+        <strong>Search Lost and Found Dogs:</strong>
+
+      </h2>
+      <input type="text" size="50" id="userSearch" placeholder="Search for a breed by typing here">
     </div>
+    <div id="content" class="jumboText">
+     
+        <h1 class="text-center">✶ ✶ ✶ ✶</h1>
+        <button type="button" class="lost btn btn-info btn-lg vetButton" data-toggle="modal" data-target="#vetModal">Find a Vet</button>
+      </div>
+  </div>
+  </div>
   </div>
   <!-- Vet Modal Pop up -->
   <div id="vetModal" class="modal fade" role="dialog">
@@ -127,25 +136,23 @@
   </div>
 
   <!-- Current Lost Dogs -->
+
   <div class="panel panel-info" id="reportTable">
-    <div class="panel-heading">
-      <h2 class="panel-title">
-          <strong>Search Dogs:</strong>
-          <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Breeds..">
-        </h2>
-    </div>
+
+
     <div class="panel-body">
+
       <table class="table table-hover" id='dogTable'>
         <thead>
           <tr>
-            <th>Status</th>
+
             <th>Breed</th>
             <th>Color</th>
             <th>Location</th>
             <th>Missing Since</th>
             <th>Lost Time of Day</th>
             <th>Please Contact</th>
-<!--             <th>Comments</th> -->
+            <!--             <th>Comments</th> -->
           </tr>
         </thead>
         <tbody>
@@ -153,7 +160,7 @@
       </table>
     </div>
   </div>
-  
+
   <!-- Footer -->
   <footer class="py-5 bg-dark" id="footerChange">
     <div class="container" id="footer">
@@ -176,12 +183,13 @@
       </div>
     </div>
   </footer>
-  
-</div>
+
+  </div>
   <!-- /.container -->
 
   <!-- Google API for Vet Locations -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmmL01G6CzZcoBiA4YJysg_hIEnUTbqss&libraries=places&callback=initialize" async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmmL01G6CzZcoBiA4YJysg_hIEnUTbqss&libraries=places&callback=initialize"
+    async defer></script>
   <!-- Search Page JS -->
   <script src="assets/javascript/search.js"></script>
   <!-- Link to SearchVet Map JS -->
